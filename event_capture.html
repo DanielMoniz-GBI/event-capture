@@ -26,11 +26,11 @@
     }, true);
 
     parent.addEventListener('click', () => {
-      console.log('Event captured at parent');
-    }, true);
-
-    parent.addEventListener('click', () => {
       console.log('Event bubbled to parent');
     });
+
+    parent.addEventListener('click', () => {
+      console.log('Event captured at parent');
+    }, true);
   </script>
 </html>
