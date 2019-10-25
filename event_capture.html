@@ -1,0 +1,36 @@
+<html>
+  <body>
+    <div>
+      <a href="#">Click me</a>
+    </div>
+  </body>
+
+  <script>
+    const anchor = document.querySelector('a');
+    const parent = document.querySelector('div');
+
+    anchor.addEventListener('click', () => {
+      console.log('Clicked target (bubble)');
+    });
+
+    anchor.addEventListener('click', () => {
+      console.log('Clicked target (capture)');
+    }, true);
+
+    anchor.addEventListener('click', () => {
+      console.log('Clicked target (bubble)');
+    }, false);
+
+    anchor.addEventListener('click', () => {
+      console.log('Clicked target (capture)');
+    }, true);
+
+    parent.addEventListener('click', () => {
+      console.log('Event captured at parent');
+    }, true);
+
+    parent.addEventListener('click', () => {
+      console.log('Event bubbled to parent');
+    });
+  </script>
+</html>
